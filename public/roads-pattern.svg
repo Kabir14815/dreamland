@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+  <!-- Geometric map-style background: dark green lines, blocks, roundabouts on transparent (cream base from body) -->
+  <g stroke="#2d3528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.45">
+    <!-- Roundabouts -->
+    <circle cx="180" cy="320" r="28"/>
+    <circle cx="520" cy="280" r="28"/>
+    <circle cx="880" cy="380" r="28"/>
+    <circle cx="320" cy="580" r="28"/>
+    <circle cx="720" cy="620" r="28"/>
+    <!-- Horizontal & vertical roads with rounded feel -->
+    <path d="M0 320 H140 M220 320 H420 M548 280 H780 M908 380 H1200"/>
+    <path d="M0 580 H260 M348 580 H692 M748 620 H1200"/>
+    <path d="M180 120 V260 M180 348 V500"/>
+    <path d="M520 120 V220 M520 308 V440"/>
+    <path d="M880 200 V320 M880 408 V560"/>
+    <!-- Block outlines (rectangular plots) -->
+    <rect x="240" y="140" width="240" height="120" rx="4"/>
+    <rect x="560" y="100" width="280" height="140" rx="4"/>
+    <rect x="80" y="420" width="200" height="140" rx="4"/>
+    <rect x="320" y="460" width="360" height="100" rx="4"/>
+    <rect x="760" y="480" width="280" height="180" rx="4"/>
+    <!-- Connecting paths -->
+    <path d="M480 260 H520 V120"/>
+    <path d="M840 240 H880 V200"/>
+    <path d="M280 580 V520 H320"/>
+    <path d="M680 620 V540 H720"/>
+    <path d="M180 500 H240 V460"/>
+    <path d="M520 440 H560 V400"/>
+  </g>
+</svg>
