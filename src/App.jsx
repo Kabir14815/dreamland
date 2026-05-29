@@ -8,8 +8,7 @@ import Founder from './components/Founder.jsx'
 import Reviews from './components/Reviews.jsx'
 import Gallery from './components/Gallery.jsx'
 import News from './components/News.jsx'
-import Contact from './components/Contact.jsx'
-import ConnectSection from './components/ConnectSection.jsx'
+import ContactSection from './components/ContactSection.jsx'
 import Footer from './components/Footer.jsx'
 import FloatingActions from './components/FloatingActions.jsx'
 import { ScrollReveal } from './hooks/useScrollReveal.jsx'
@@ -40,12 +39,9 @@ export default function App() {
         <ScrollReveal>
           <News />
         </ScrollReveal>
-        <div className="contact-row">
-          <ConnectSection />
-          <ScrollReveal className="contact-reveal">
-            <Contact />
-          </ScrollReveal>
-        </div>
+        <ScrollReveal>
+          <ContactSection />
+        </ScrollReveal>
       </main>
       <Footer />
       <FloatingActions />

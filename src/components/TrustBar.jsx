@@ -8,7 +8,7 @@ const stats = [
 export default function TrustBar() {
   return (
     <section className="trust-bar" aria-label="Why clients trust us">
-      <div className="trust-bar__inner">
+      <div className="container trust-bar__inner">
         {stats.map((item) => (
           <div key={item.label} className="trust-stat">
             <span className="trust-stat__value">{item.value}</span>
