@@ -1,5 +1,5 @@
 {
-  "name": "dreamland-infra",
+  "name": "budhiraja-property",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
+    "playwright": "^1.60.0",
     "vite": "^5.0.0"
   }
 }

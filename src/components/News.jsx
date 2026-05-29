@@ -1,17 +1,20 @@
+import SectionHeader from './SectionHeader.jsx'
+
 const posts = [
-  { date: '16 Feb, 2026', title: 'Dholera residential project pre-launch opens for investors', excerpt: 'Premium flats & high-rises in India\'s first greenfield smart city.' },
-  { date: '10 Feb, 2026', title: 'Dreamland Infra announces 1% monthly assured return scheme', excerpt: 'Limited-time offer for early investors in Dholera SIR.' },
-  { date: '05 Feb, 2026', title: 'India\'s strategic move into semiconductors boosts Dholera', excerpt: 'Dholera at the forefront of industrial and tech growth.' },
-  { date: '01 Feb, 2026', title: 'Location advantages: 10 min from SIR Activation Zone', excerpt: 'Connectivity and appreciation in focus for your new flat.' },
+  { date: 'May 2026', title: 'Panchkula Sector 15–20 seeing strong demand for 3 BHK flats', excerpt: 'Residential property prices remain stable with high buyer interest in well-connected sectors.' },
+  { date: 'Apr 2026', title: 'Mohali IT corridor drives commercial real estate growth', excerpt: 'Office spaces and SCO plots in Aerocity and surrounding areas attract investors.' },
+  { date: 'Mar 2026', title: 'Chandigarh luxury segment: premium apartments in demand', excerpt: 'High-end buyers continue to invest in upscale societies across the city.' },
+  { date: 'Feb 2026', title: 'Tricity rental market update for 2026', excerpt: 'Rental yields remain attractive for 2 & 3 BHK flats near major employment hubs.' },
 ]
 
 export default function News() {
   return (
-    <section className="news panel-section alt" id="news">
+    <section className="section section--warm" id="news">
       <div className="container">
-        <p className="section-label">Latest</p>
-        <h2 className="section-title">Blogs</h2>
-        <h2 className="section-title">News & Events</h2>
+        <SectionHeader
+          eyebrow="Market Insights"
+          title="Tricity Property Updates"
+        />
         <div className="news-grid">
           {posts.map((post, i) => (
             <article key={i} className="news-card">
@@ -21,7 +24,7 @@ export default function News() {
             </article>
           ))}
         </div>
-        <a href="#contact" className="btn btn-outline">View More</a>
+        <a href="#contact" className="btn btn-outline">Get Market Advice</a>
       </div>
     </section>
   )

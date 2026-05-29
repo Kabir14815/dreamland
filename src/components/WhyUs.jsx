@@ -1,71 +1,50 @@
+import SectionHeader from './SectionHeader.jsx'
+
 const locations = [
-  { time: '10 MINS', name: 'SIR ACTIVATION ZONE', icon: 'zone' },
-  { time: '15 MINS', name: 'DHOLERA INTERNATIONAL AIRPORT', icon: 'airport' },
-  { time: '2 MINS', name: 'SIR BOUNDARY', icon: 'road' },
-  { time: '10 MINS', name: 'BHAVNAGAR INDUSTRIAL ZONE', icon: 'building' },
-  { time: '10 MINS', name: 'BLACK BUCK SANCTUARY', icon: 'nature' },
-  { time: '—', name: 'MAJOR INDUSTRIAL CORRIDORS', icon: 'connect' },
+  { label: 'Prime', name: 'Panchkula', icon: 'building' },
+  { label: 'Capital', name: 'Chandigarh', icon: 'zone' },
+  { label: 'Growing', name: 'Mohali (SAS Nagar)', icon: 'road' },
+  { label: 'Sector 15', name: 'Panchkula Office', icon: 'office' },
+  { label: '24/7', name: 'Available for You', icon: 'clock' },
+  { label: '4.833★', name: 'Google Rated', icon: 'star' },
 ]
 
-function LocationIcon({ type }) {
-  const className = 'why-location-icon'
-  const style = { width: 36, height: 36 }
+function CellIcon({ type }) {
+  const props = { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.5 }
   switch (type) {
     case 'zone':
-      return (
-        <svg className={className} style={style} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <rect x="4" y="4" width="16" height="16" rx="2" />
-          <path d="M12 8v8M8 12h8" />
-        </svg>
-      )
-    case 'airport':
-      return (
-        <svg className={className} style={style} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M12 2v4l5 3 2 8h-4l-2-6h-2l-2 6H5l2-8 5-3V2z" />
-        </svg>
-      )
+      return <svg {...props}><rect x="4" y="4" width="16" height="16" rx="2" /><path d="M12 8v8M8 12h8" /></svg>
+    case 'clock':
+      return <svg {...props}><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>
     case 'road':
-      return (
-        <svg className={className} style={style} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M4 12h16M4 8v8M20 8v8M8 6v12M16 6v12" />
-        </svg>
-      )
+      return <svg {...props}><path d="M4 12h16M8 6v12M16 6v12" /></svg>
     case 'building':
-      return (
-        <svg className={className} style={style} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M4 21V9l8-4 8 4v12M4 14h16M9 21v-4h6v4" />
-        </svg>
-      )
-    case 'nature':
-      return (
-        <svg className={className} style={style} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M12 22s8-4 8-10c0-3.5-3-6-8-6s-8 2.5-8 6c0 6 8 10 8 10z" />
-        </svg>
-      )
-    case 'connect':
-      return (
-        <svg className={className} style={style} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M8 6h8M8 12h8M8 18h4M4 6v12M20 6v12" />
-        </svg>
-      )
+      return <svg {...props}><path d="M4 21V9l8-4 8 4v12M4 14h16M9 21v-4h6v4" /></svg>
+    case 'star':
+      return <svg {...props}><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 17l-6.5 3.5 2-7L2 9h7z" /></svg>
+    case 'office':
+      return <svg {...props}><path d="M8 6h8M8 12h8M8 18h4M4 6v12M20 6v12" /></svg>
     default:
-      return <span className={className} style={style} />
+      return null
   }
 }
 
 export default function WhyUs() {
   return (
-    <section className="why-us panel-section" id="about">
-      <div className="container why-us-inner">
-        <p className="why-us-label">Why</p>
-        <h2 className="why-us-title">DREAMLAND INFRA?</h2>
-        <div className="why-us-grid">
+    <section className="section" id="about">
+      <div className="container">
+        <SectionHeader
+          eyebrow="Why Choose Us"
+          title="Budhiraja Property Consultant?"
+          desc="A registered real estate consultancy serving the Tricity region with honest deals, transparent pricing and end-to-end property assistance."
+        />
+        <div className="why-grid">
           {locations.map((loc, i) => (
-            <div key={i} className="why-us-cell">
-              <LocationIcon type={loc.icon} />
-              <div className="why-us-cell-text">
-                <span className="why-us-time">{loc.time}</span>
-                <span className="why-us-name">{loc.name}</span>
+            <div key={i} className="why-cell">
+              <div className="why-cell__icon"><CellIcon type={loc.icon} /></div>
+              <div>
+                <span className="why-cell__label">{loc.label}</span>
+                <span className="why-cell__name">{loc.name}</span>
               </div>
             </div>
           ))}
